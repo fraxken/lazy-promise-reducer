@@ -1,0 +1,49 @@
+{
+    "name": "@slimio/lazy-promise-reducer",
+    "version": "1.0.0",
+    "description": "lazy promise reducer",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "prepublishOnly": "pkg-ok",
+        "test": "jest --coverage"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fraxken/lazy-promise-reducer.git"
+    },
+    "keywords": [
+        "SlimIO",
+        "lazy-promise-reducer"
+    ],
+    "files": [],
+    "author": "SlimIO",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/fraxken/lazy-promise-reducer/issues"
+    },
+    "homepage": "https://github.com/fraxken/lazy-promise-reducer#readme",
+    "dependencies": {
+        "@slimio/lock": "^0.5.0",
+        "gauge": "^2.7.4"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@slimio/eslint-config": "^4.0.0",
+        "eslint": "^6.8.0",
+        "husky": "^4.2.3",
+        "pkg-ok": "^2.3.1",
+        "cross-env": "^7.0.2",
+        "jest": "^25.1.0"
+    },
+    "engines": {
+        "node": ">=12"
+    },
+    "husky": {
+        "hooks": {
+            "pre-push": "cross-env eslint index.js && npm test",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    }
+}
